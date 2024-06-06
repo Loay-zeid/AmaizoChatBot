@@ -312,7 +312,7 @@ const Chat = ({ setPage }) => {
           
           
         </div>
-        <div className='   w-[50vw] m-auto mb-2 flex flex-row z-[100]  rounded-[20px]  bg-messagesBg p-2 justify-center items-center p-2 '> 
+        <div className='   w-[50vw] m-auto  flex flex-row justify-center items-center z-[100]  rounded-[20px] bg-messagesBg p-2 '> 
         <input 
   type="text" 
   className="w-[95%] bg-grey text-black border-0 rounded-lg placeholder-text-gray-400 flex items-center "  
