@@ -3,7 +3,7 @@
 This project is a web application that allows users to sign up, sign in, and chat with a chatbot
 that translates their messages into another language using the Google Translate API.
 
-##Features 
+## Features 
 validation form :Secure user sign-up and sign-in functionality.
 Chat Interface: An interactive chat interface where users can send messages.
 Language Translation: The chatbot replies with the user's message translated into a different language using the Google Translate API.
