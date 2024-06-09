@@ -315,7 +315,7 @@ const Chat = ({ setPage }) => {
         <div className='   w-[50vw] m-auto  flex flex-row justify-center items-center z-[100]  rounded-[20px] bg-messagesBg p-2 '> 
         <input 
   type="text" 
-  className="w-[95%] bg-grey text-black border-0 rounded-lg placeholder-text-gray-400 flex items-center "  
+  className="w-[95%] bg-grey text-black border-0 rounded-lg placeholder-text-gray-400 flex items-center p-2 "  
   value={input} 
   onChange={(e) => setInput(e.target.value)} 
   placeholder="Type your message..." 
