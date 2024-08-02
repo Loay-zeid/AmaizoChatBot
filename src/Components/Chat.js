@@ -244,13 +244,13 @@ const Chat = ({ setPage }) => {
       </div>
 
       {/* Chat Area */}
-      <div className="flex-grow bg-selectedBg flex flex-col text-white overflow-y-auto">
+      <div className="flex-grow bg-selectedBg flex flex-col text-white overflow-y-auto ">
         <div className="  ">
                  {" "}
-          <div className="bg-selectedBg  ml-8 p-4 border-b border-gray-600  ">
+          <div className="bg-selectedBg p-2 border-b border-gray-600  ">
                      {" "}
             <button className=" hover:bg-messagesBg text-white p-2 rounded-lg">
-              >>
+              {'>>'}
             </button>
                      {" "}
             <button className=" hover:bg-messagesBg text-white p-2 rounded-lg">
