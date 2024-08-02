@@ -2,8 +2,9 @@
 
 This project is a web application that allows users to sign up, sign in, and chat with a chatbot
 that translates their messages into another language using the Google Translate API.
+Task with Raizer Company
 
-##Features 
+## Features 
 validation form :Secure user sign-up and sign-in functionality.
 Chat Interface: An interactive chat interface where users can send messages.
 Language Translation: The chatbot replies with the user's message translated into a different language using the Google Translate API.
@@ -31,6 +32,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-you can visit the deploynebt URL from here : https://amaizo-chat-bot.vercel.app/
+you can visit the deployment URL from here : https://amaizo-chat-bot.vercel.app/
 
 
