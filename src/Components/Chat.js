@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import axios from "axios";
 
 const Chat = () => {
@@ -21,6 +21,16 @@ const Chat = () => {
       const userMessage = { text: input, user: true };
       setMessages((prev) => [...prev, userMessage]);
 
+      if (!process.env.REACT_APP_API_KEY) {
+        const errorMessage = {
+          text: "⚠️ API key not configured. Please set REACT_APP_API_KEY in your .env file.",
+          user: false,
+        };
+        setMessages((prev) => [...prev, errorMessage]);
+        setInput("");
+        return;
+      }
+
       try {
         const response = await axios.post(
           "https://aibit-translator.p.rapidapi.com/api/v1/translator/text",
@@ -35,6 +45,7 @@ const Chat = () => {
               "x-rapidapi-key": process.env.REACT_APP_API_KEY,
               "x-rapidapi-host": "aibit-translator.p.rapidapi.com",
             },
+            timeout: 30000, // Increased from 10s to 30s
           }
         );
 
@@ -42,6 +53,23 @@ const Chat = () => {
         setMessages((prev) => [...prev, botMessage]);
       } catch (error) {
         console.error("Error translating message", error);
+        let errorText = "❌ Error: ";
+        
+        if (error.code === "ECONNABORTED") {
+          errorText += "Request timeout - API is taking too long to respond";
+        } else if (error.response?.status === 401) {
+          errorText += "Invalid API key";
+        } else if (error.response?.status === 429) {
+          errorText += "Too many requests - please try again later";
+        } else {
+          errorText += error.message;
+        }
+        
+        const errorMessage = {
+          text: errorText,
+          user: false,
+        };
+        setMessages((prev) => [...prev, errorMessage]);
       }
 
       setInput("");
