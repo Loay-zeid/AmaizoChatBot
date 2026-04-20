@@ -26,10 +26,7 @@ const SignUp = ({ setPage }) => {
     const value = e.target.value;
     setName(value);
     if (touched.name) {
-      setErrors({
-        ...errors,
-        name: value && !validateName(value) ? 'Name must be at least 2 characters' : '',
-      });
+      setErrors({ ...errors, name: value && !validateName(value) ? 'Name must be at least 2 characters' : '' });
     }
   };
 
@@ -37,10 +34,7 @@ const SignUp = ({ setPage }) => {
     const value = e.target.value;
     setEmail(value);
     if (touched.email) {
-      setErrors({
-        ...errors,
-        email: value && !validateEmail(value) ? 'Invalid email address' : '',
-      });
+      setErrors({ ...errors, email: value && !validateEmail(value) ? 'Invalid email address' : '' });
     }
   };
 
@@ -48,16 +42,10 @@ const SignUp = ({ setPage }) => {
     const value = e.target.value;
     setPassword(value);
     if (touched.password) {
-      setErrors({
-        ...errors,
-        password: value && !validatePassword(value) ? 'Password must be at least 6 characters' : '',
-      });
+      setErrors({ ...errors, password: value && !validatePassword(value) ? 'Password must be at least 6 characters' : '' });
     }
     if (touched.confirmPassword && confirmPassword && value !== confirmPassword) {
-      setErrors((prev) => ({
-        ...prev,
-        confirmPassword: 'Passwords do not match',
-      }));
+      setErrors((prev) => ({ ...prev, confirmPassword: 'Passwords do not match' }));
     }
   };
 
@@ -65,29 +53,17 @@ const SignUp = ({ setPage }) => {
     const value = e.target.value;
     setConfirmPassword(value);
     if (touched.confirmPassword) {
-      setErrors({
-        ...errors,
-        confirmPassword: value && value !== password ? 'Passwords do not match' : '',
-      });
+      setErrors({ ...errors, confirmPassword: value && value !== password ? 'Passwords do not match' : '' });
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
-
-    if (!validateName(name)) {
-      newErrors.name = 'Name must be at least 2 characters';
-    }
-    if (!validateEmail(email)) {
-      newErrors.email = 'Please enter a valid email address';
-    }
-    if (!validatePassword(password)) {
-      newErrors.password = 'Password must be at least 6 characters';
-    }
-    if (password !== confirmPassword) {
-      newErrors.confirmPassword = 'Passwords do not match';
-    }
+    if (!validateName(name)) newErrors.name = 'Name must be at least 2 characters';
+    if (!validateEmail(email)) newErrors.email = 'Please enter a valid email address';
+    if (!validatePassword(password)) newErrors.password = 'Password must be at least 6 characters';
+    if (password !== confirmPassword) newErrors.confirmPassword = 'Passwords do not match';
 
     setErrors(newErrors);
     setTouched({ name: true, email: true, password: true, confirmPassword: true });
@@ -99,21 +75,20 @@ const SignUp = ({ setPage }) => {
 
   return (
     <div className="signup-container flex justify-center items-center h-screen bg-black overflow-hidden">
-      <div className="registerCard p-6 rounded shadow-md" style={{ width: '400px' }}>
+      <div className="registerCard p-6 rounded shadow-md" style={{ width: '400px', boxSizing: 'border-box' }}>
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mb-4">
           <img
             className="amaizoLogo mb-4"
             alt="AMAIZO LOGO"
             src="./amaizoLogo.png"
             style={{ height: '60px' }}
           />
-
           <h2 className="text-xl font-semibold text-white mb-1">Sign Up</h2>
           <p className="text-gray-400 text-xs mb-6">Create your free account</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="w-full" style={{ boxSizing: 'border-box' }}>
+        <form onSubmit={handleSubmit} className="w-full">
           <div className="mb-3">
             <label className="text-white text-xs font-medium mb-1 block">Name</label>
             <input
@@ -123,7 +98,6 @@ const SignUp = ({ setPage }) => {
               value={name}
               onChange={handleNameChange}
               onBlur={() => setTouched({ ...touched, name: true })}
-              style={{ boxSizing: 'border-box' }}
             />
             {touched.name && errors.name && <span className="text-red-500 text-xs mt-0.5 block">{errors.name}</span>}
           </div>
@@ -137,7 +111,6 @@ const SignUp = ({ setPage }) => {
               value={email}
               onChange={handleEmailChange}
               onBlur={() => setTouched({ ...touched, email: true })}
-              style={{ boxSizing: 'border-box' }}
             />
             {touched.email && errors.email && <span className="text-red-500 text-xs mt-0.5 block">{errors.email}</span>}
           </div>
@@ -151,7 +124,6 @@ const SignUp = ({ setPage }) => {
               value={password}
               onChange={handlePasswordChange}
               onBlur={() => setTouched({ ...touched, password: true })}
-              style={{ boxSizing: 'border-box' }}
             />
             {touched.password && errors.password && <span className="text-red-500 text-xs mt-0.5 block">{errors.password}</span>}
           </div>
@@ -165,28 +137,34 @@ const SignUp = ({ setPage }) => {
               value={confirmPassword}
               onChange={handleConfirmPasswordChange}
               onBlur={() => setTouched({ ...touched, confirmPassword: true })}
-              style={{ boxSizing: 'border-box' }}
             />
             {touched.confirmPassword && errors.confirmPassword && <span className="text-red-500 text-xs mt-0.5 block">{errors.confirmPassword}</span>}
           </div>
 
-          <div className="flex justify-center mb-3">
-            <button type="submit" className="signUpButtom text-white p-2 rounded-lg font-semibold text-sm px-6">
-              Create Account
-            </button>
-          </div>
+          <button type="submit" className="signUpButtom text-white p-2 rounded-lg font-semibold text-sm w-full">
+            Create Account
+          </button>
         </form>
 
-        <p className="text-center text-gray-400 text-xs mb-3">
+        {/* ✅ was <a href="#"> — replaced with button */}
+        <p className="text-center text-gray-400 text-xs mt-3 mb-3">
           By signing up you agree to our{" "}
-          <a href="#" onClick={(e) => e.preventDefault()} className="text-selectedOrange hover:underline">
+          <button
+            type="button"
+            className="text-selectedOrange hover:underline bg-transparent border-none p-0 cursor-pointer text-xs"
+          >
             Terms of Service
-          </a>
+          </button>
         </p>
 
-        <button onClick={() => setPage('signin')} className="text-selectedOrange text-xs font-medium hover:underline">
-          Already have an account? <span className="font-semibold">Sign In</span>
-        </button>
+        <div className="flex justify-center">
+          <button
+            onClick={() => setPage('signin')}
+            className="text-selectedOrange text-xs font-medium hover:underline"
+          >
+            Already have an account? <span className="font-semibold">Sign In</span>
+          </button>
+        </div>
       </div>
     </div>
   );

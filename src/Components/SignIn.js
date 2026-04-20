@@ -47,8 +47,8 @@ const SignIn = ({ setPage }) => {
 
   return (
     <div className="signup-container flex justify-center items-center h-screen bg-black overflow-hidden">
-      <div className="registerCard p-6 rounded shadow-md" style={{ width: '400px' }}>
-        
+      <div className="registerCard p-6 rounded shadow-md" style={{ width: '400px', boxSizing: 'border-box' }}>
+
         <div className="flex flex-col items-center mb-6">
           <img
             className="amaizoLogo mb-4"
@@ -56,19 +56,18 @@ const SignIn = ({ setPage }) => {
             src="./amaizoLogo.png"
             style={{ height: '60px' }}
           />
-
           <h2 className="text-xl font-semibold text-white mb-1">Sign In</h2>
           <p className="text-gray-400 text-xs mb-6">Access your account</p>
         </div>
-        
+
         <div className="flex flex-col gap-2 mb-4">
-          <button className="regButton text-sm py-2 px-3 ">Sign In With Google</button>
+          <button className="regButton text-sm py-2 px-3">Sign In With Google</button>
           <button className="regButton text-sm py-2 px-3">Sign In With Apple</button>
         </div>
 
         <div className="w-full h-px bg-gray-700 mb-4"></div>
 
-        <form onSubmit={handleSubmit} className="w-full" style={{ boxSizing: 'border-box' }}>
+        <form onSubmit={handleSubmit} className="w-full">
           <div className="mb-3">
             <label className="text-white text-xs font-medium mb-1 block">Email</label>
             <input
@@ -78,7 +77,6 @@ const SignIn = ({ setPage }) => {
               onChange={handleEmailChange}
               onBlur={() => setTouched({ ...touched, email: true })}
               placeholder="you@example.com"
-              style={{ boxSizing: 'border-box' }}
             />
             {touched.email && emailError && <span className="text-red-500 text-xs mt-0.5 block">{emailError}</span>}
           </div>
@@ -92,32 +90,42 @@ const SignIn = ({ setPage }) => {
               onChange={handlePasswordChange}
               onBlur={() => setTouched({ ...touched, password: true })}
               placeholder="••••••••"
-              style={{ boxSizing: 'border-box' }}
             />
             {touched.password && passwordError && <span className="text-red-500 text-xs mt-0.5 block">{passwordError}</span>}
           </div>
 
-          <a href="#" onClick={(e) => e.preventDefault()} className="text-selectedOrange text-xs mb-3 block hover:underline">
+          {/* ✅ was <a href="#"> — replaced with button */}
+          <button
+            type="button"
+            className="text-selectedOrange text-xs mb-3 block hover:underline bg-transparent border-none p-0 cursor-pointer"
+          >
             Forgot password?
-          </a>
+          </button>
 
-          <div className="flex justify-center mb-3">
-            <button type="submit" className="signUpButtom text-white p-2 rounded-lg font-semibold text-sm px-6">
-              Sign In
-            </button>
-          </div>
+          <button type="submit" className="signUpButtom text-white p-2 rounded-lg font-semibold text-sm w-full">
+            Sign In
+          </button>
         </form>
 
-        <p className="text-center text-gray-400 text-xs mb-3">
+        {/* ✅ was <a href="#"> — replaced with button */}
+        <p className="text-center text-gray-400 text-xs mt-3 mb-3">
           By signing in you agree to our{" "}
-          <a href="#" onClick={(e) => e.preventDefault()} className="text-selectedOrange hover:underline">
+          <button
+            type="button"
+            className="text-selectedOrange hover:underline bg-transparent border-none p-0 cursor-pointer text-xs"
+          >
             Terms of Service
-          </a>
+          </button>
         </p>
 
-        <button onClick={() => setPage('signup')} className="text-selectedOrange text-xs font-medium hover:underline">
-          Don't have an account? <span className="font-semibold">Sign Up</span>
-        </button>
+        <div className="flex justify-center">
+          <button
+            onClick={() => setPage('signup')}
+            className="text-selectedOrange text-xs font-medium hover:underline"
+          >
+            Don't have an account? <span className="font-semibold">Sign Up</span>
+          </button>
+        </div>
       </div>
     </div>
   );
