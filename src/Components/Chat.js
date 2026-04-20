@@ -59,7 +59,7 @@ const Chat = ({ setPage }) => {
         </div>
         <nav className="flex-grow">
           <ul className="space-y-2">
-            <li>
+            <li className="bg-selectedOrange">
               <a
                 href="#"
                 className=" edit flex items-center p-2 rounded hover: bg-selectedOrange w-1  "
@@ -300,8 +300,8 @@ const Chat = ({ setPage }) => {
                   <div className="user-circle flex bg-selectedOrange rounded-full w-8 h-8 ml-4" />
                 </div>
               ) : (
-                <div className="flex items-center">
-                  <div className="bot-circle bg-gray-400 rounded-full w-8 h-8 ml-4 bg-selectedOrange mr-2" />
+                <div className="flex items-center bg-selectedOrange">
+                  <div className="bot-circle  rounded-full w-8 h-8 ml-4 bg-selectedOrange mr-2" />
                   <div className="message-content p-4 rounded-lg bg-messagesBg  text-black ">
                     {message.text}
                   </div>
@@ -312,7 +312,7 @@ const Chat = ({ setPage }) => {
           
           
         </div>
-        <div className='   w-[50vw] m-auto  flex flex-row justify-center items-center z-[100]  rounded-[20px] bg-messagesBg p-2 '> 
+        <div className=' mb-14  w-[50vw] m-auto  flex flex-row justify-center items-center z-[100]  rounded-[20px] bg-messagesBg p-2 '> 
         <input 
   type="text" 
   className="w-[95%] bg-grey text-black border-0 rounded-lg placeholder-text-gray-400 flex-1 bg-transparent outline-none items-center p-2 "  
