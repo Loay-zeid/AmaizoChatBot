@@ -9,11 +9,7 @@ This project focuses on integrating AI APIs, handling chat state, and building a
 
 ---
 
-## 🚀 Live Demo
 
-🔗 https://amaizo-chat-bot.vercel.app/
-
----
 
 ## 🎯 Key Features
 
@@ -94,3 +90,10 @@ This project focuses on integrating AI APIs, handling chat state, and building a
 <p align="center">
   <img src="result.png" width="900"/>
 </p>
+
+---
+## 🚀 Live Demo
+
+🔗 https://amaizo-chat-bot.vercel.app/
+
+---
