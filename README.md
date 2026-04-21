@@ -1,37 +1,96 @@
-# Language Translation Chatbot
+# 🤖 Amaizo Chat Bot
 
-This project is a web application that allows users to sign up, sign in, and chat with a chatbot
-that translates their messages into another language using the Google Translate API.
-Task with Raizer Company
+## 📌 Overview
 
-## Features 
-validation form :Secure user sign-up and sign-in functionality.
-Chat Interface: An interactive chat interface where users can send messages.
-Language Translation: The chatbot replies with the user's message translated into a different language using the Google Translate API.
+The **Amaizo Chat Bot** is a modern AI-powered chat application built using **React / Next.js (or your stack)**.  
+It allows users to interact with an intelligent chatbot that generates real-time responses in a smooth and responsive UI.
 
+This project focuses on integrating AI APIs, handling chat state, and building a clean conversational interface.
 
-##Technologies Used :
-React, Tailwind, Axios for API calls, and Heroicons.
+---
 
-In the project directory, you can run:
+## 🚀 Live Demo
 
-download it first 
-### `npm start`
+🔗 https://amaizo-chat-bot.vercel.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🎯 Key Features
 
-### `npm run build`
+- 💬 Real-time AI chat interface  
+- ⚡ Fast response generation  
+- 🧠 AI-powered conversations  
+- 📱 Fully responsive design  
+- 🧾 Clean chat history UI  
+- 🔄 Smooth message updates  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🧰 Tech Stack
 
-you can visit the deployment URL from here : https://amaizo-chat-bot.vercel.app/
+- React / Next.js  
+- Tailwind CSS (or CSS)  
+- AI API (OpenAI or similar)  
+- Vercel Deployment  
 
+---
 
+## 🧭 How to Use the Application
+
+### 1️⃣ Home Page
+
+- Landing page of the application  
+- Brief introduction about Amaizo Chat Bot  
+- Navigation to authentication pages  
+
+<p align="center">
+  <img src="home.png" width="900"/>
+</p>
+
+---
+
+### 2️⃣ Sign Up
+
+- Create a new account  
+- Enter required user information  
+- Submit registration form  
+
+<p align="center">
+  <img src="sign-up.png" width="900"/>
+</p>
+
+---
+
+### 3️⃣ Sign In
+
+- Login using existing credentials  
+- Authenticate user session  
+- Redirect to chat interface  
+
+<p align="center">
+  <img src="sign-in.png" width="900"/>
+</p>
+
+---
+
+### 4️⃣ Chat Interface
+
+- Start real-time conversation with AI  
+- Send messages and receive instant responses  
+- Clean and interactive chat UI  
+
+<p align="center">
+  <img src="chat.png" width="900"/>
+</p>
+
+---
+
+### 5️⃣ Result / Response
+
+- AI-generated responses displayed clearly  
+- Conversation history maintained  
+- Smooth user experience  
+
+<p align="center">
+  <img src="result.png" width="900"/>
+</p>
