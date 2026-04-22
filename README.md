@@ -40,7 +40,7 @@ This project focuses on integrating AI APIs, handling chat state, and building a
 - Navigation to authentication pages  
 
 <p align="center">
-  <img src="home.png" width="900"/>
+  <img src="starter.png" width="900"/>
 </p>
 
 ---
@@ -88,7 +88,7 @@ This project focuses on integrating AI APIs, handling chat state, and building a
 - Smooth user experience  
 
 <p align="center">
-  <img src="result.png" width="900"/>
+  <img src="resulte.png" width="900"/>
 </p>
 
 ---
